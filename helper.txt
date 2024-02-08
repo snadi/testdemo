@@ -1,0 +1,21 @@
+   private void divideHelper(int a, int b, double expected, double delta){
+        assertEquals(expected, calculator.divide(a, b), delta);
+    }
+
+
+    @Test
+    public void divide_ByZero() throws DivideByZeroException{
+        assertThrows(DivideByZeroException.class, () -> {calculator.divide(8, 0);});
+    }
+
+
+    public double divide(int a, int b) throws DivideByZeroException {
+
+        if (b == 0) {
+           throw (new DivideByZeroException("Cannot divide by 0"));
+        }
+  
+        double result = (double) a / (double) b;
+        currentValue = result;
+        return result;
+     }
