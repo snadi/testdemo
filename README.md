@@ -1,41 +1,10 @@
-# Pitest Maven Tutorial
+# Demo for Junit, Jacoco, and CI
 
-Please refer to [Pitest](https://pitest.org) for more detailed info.
 
-## Setting up Pitest 
+The full-demo branch contains the full demo with junit added to the maven file, jacoco coverage being measured, and CI configured and in place.
 
-Add pitest as a plugin in the `<build><plugins> .... </plugins></build>` section of your pom.xml file. Make sure to check available versions on maven central and update the version number accordingly.
+Each of these steps can also be found separately in the following branches:
 
-```xml
-<build>
-...
-    <plugins>
-      <plugin>
-        <groupId>org.pitest</groupId>
-        <artifactId>pitest-maven</artifactId>
-        <version>1.15.8</version>
-      </plugin>
-    </plugins>
-...
-</build>
-```
-
-Note that because we are using junit5 in this project, we need to add another dependency for pitest to work. So in the `<dependencies>` section of your pom.xml, add the following dependency:
-
-```xml
-<dependencies>
-  ...
-    <dependency>
-      <groupId>org.pitest</groupId>
-      <artifactId>pitest-junit5-plugin</artifactId>
-      <version>1.2.1</version>
-    </dependency>
-    ...
-</dependencies>
-```
-
-Once you have the above set, you can generate the mutation testing report using:
-
-`mvn test-compile org.pitest:pitest-maven:mutationCoverage`
-
-There are additional configurations you can make (e.g., only focusing on certain classes in your report). Please check [https://pitest.org/quickstart/maven/](https://pitest.org/quickstart/maven/) for additional options.
+- [snadi/basicjunit](https://github.com/snadi/testdemo/tree/snadi/basicjunit): very basic unit tests configured to run with `mvn test`. This is also the state of the main branch.
+- [snadi/jacoco](https://github.com/snadi/testdemo/tree/snadi/jacoco): adding jacoco to the pom.xml file and configuring it to measure coverage whenever `mvn test` is run. See README in that branch for a jacoco tutorial.
+- [snadi/basicci](https://github.com/snadi/testdemo/tree/snadi/basicci): adding a very basic github actions workflow file that gets triggered on every push to any branch
