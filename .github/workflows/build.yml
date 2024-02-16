@@ -21,6 +21,13 @@ jobs:
         working-directory: .
         run: |
           mvn test
+
+      - name: Generate JaCoCo Badge
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          generate-branches-badge: true
+          jacoco-csv-file: target/site/jacoco/jacoco.csv
+
           
       - name: Calculate mutation score
         # only calculate mutation score in pull request builds

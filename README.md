@@ -1,5 +1,6 @@
 # Demo for Junit, Jacoco, and CI
 
+![Coverage](.github/badges/jacoco.svg) ![Branches](.github/badges/branches.svg)
 
 The main branch contains the full demo with junit added to the maven file, jacoco coverage being measured, and CI configured with measuring coverage.
 
