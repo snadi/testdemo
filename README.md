@@ -109,3 +109,4 @@ This [Stack Overflow thread](https://stackoverflow.com/questions/47824761/how-wo
 - [wirnis - StackOverflow](https://stackoverflow.com/questions/55716779/generating-a-jacoco-code-coverage-report-with-maven)
 - [Baeldung](https://www.baeldung.com/jacoco-report-exclude)
 - [Setting up for VS code](https://medium.com/@karlrombauts/setting-up-unit-testing-for-java-in-vs-code-with-maven-3dc75579122f)
+- [See for more options for jacoco](https://mkyong.com/maven/maven-jacoco-code-coverage-example/)
