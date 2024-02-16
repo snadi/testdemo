@@ -2,13 +2,11 @@ name: Build & test project
 
 on:
     push:
-      branches:
-        - 'main'
     pull_request:
 
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +17,16 @@ jobs:
         with:
           java-version: '8'
           distribution: 'zulu'
-      - name: Build project with maven
+      - name: Run unit tests
         working-directory: .
         run: |
           mvn test
+          
+      - name: Calculate mutation score
+        # only calculate mutation score in pull request builds
+        if: ${{ github.event_name == 'pull_request' }}
+        working-directory: .
+        run: |
+          # fail the build if mutation score is less than 80%
+          mvn test-compile org.pitest:pitest-maven:mutationCoverage -DmutationThreshold=80
+          
