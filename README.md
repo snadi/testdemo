@@ -2,9 +2,9 @@
 
 ![Coverage](.github/badges/jacoco.svg) ![Branches](.github/badges/branches.svg)
 
-The main branch contains the full demo with junit added to the maven file, jacoco coverage being measured, and CI configured with measuring coverage.
+The main branch contains the full demo with junit added to the maven file, jacoco coverage being measured, and CI configured with measuring coverage and producing a badge. Additionally, in the main branch, the CI is also configured to measure mutation coverage only on PRs and fail if it is less than 80% mutation score.
 
-Each of these steps can also be found separately in the following branches:
+Some of these individual steps can also be found separately in the following branches:
 
 - [snadi/basicjunit](https://github.com/snadi/testdemo/tree/snadi/basicjunit): very basic unit tests configured to run with `mvn test`.
 - [snadi/jacoco](https://github.com/snadi/testdemo/tree/snadi/jacoco): adding jacoco to the pom.xml file and configuring it to measure coverage whenever `mvn test` is run. The README in that branch has a jacoco tutorial explaining where to find the jacoco report.
