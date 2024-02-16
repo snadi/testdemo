@@ -38,4 +38,6 @@ Once you have the above set, you can generate the mutation testing report using:
 
 `mvn test-compile org.pitest:pitest-maven:mutationCoverage`
 
+This will output an html report to target/pit-reports/index.html
+
 There are additional configurations you can make (e.g., only focusing on certain classes in your report). Please check [https://pitest.org/quickstart/maven/](https://pitest.org/quickstart/maven/) for additional options.
