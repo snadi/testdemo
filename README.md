@@ -49,6 +49,8 @@ To use [JaCoCo](https://www.jacoco.org/jacoco/trunk/index.html), we need to make
 
 That's it! Running the `mvn test` command should generate reports in an `index.html` file in the `target/site/jacoco/` directory.
 
+Note how branch coverage is N/A in the report? Think of why that is. Try adding some if statements or loops in your code and see how branch coverage changes.
+
 ## Seeing coverage results in Visual Studio
 
 You can install the [Coverage Gutters VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters) and enable watch on the bottom left corner of VS code. This extension will use the results of jacoco to highlight covered code in green and missed code in red.
