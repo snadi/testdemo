@@ -9,7 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     permissions: 
-      actions: write
+      content: write
 
     steps:
       - uses: actions/checkout@v4
