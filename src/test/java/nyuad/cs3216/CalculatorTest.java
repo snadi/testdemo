@@ -3,8 +3,10 @@ package nyuad.cs3216;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import nyuad.cs3216.exceptions.DivideByZeroException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit test for simple App.
@@ -19,32 +21,35 @@ public class CalculatorTest {
     }
 
     @Test
-    public void divide_WholeDivisible() {
+    public void divide_WholeDivisible() throws DivideByZeroException {
         int a = 12;
         int b = 4;
         double expected = 3;
         assertEquals(expected, calculator.divide(a, b));
+        assertEquals(expected, calculator.getCurrentValue(), 0.0000001d);
     }
 
     @Test
-    public void divide_WholeFraction() {
+    public void divide_WholeFraction() throws DivideByZeroException  {
         int a = 3;
         int b = 4;
         double expected = 0.75;
         assertEquals(expected, calculator.divide(a, b));
+        assertEquals(expected, calculator.getCurrentValue(), 0.0000001d);
     }
 
     @Test
-    public void divide_WithRemainder() {
+    public void divide_WithRemainder() throws DivideByZeroException  {
         int a = 4;
         int b = 3;
         double expected = 1.33333333333;
         assertEquals(expected, calculator.divide(a, b), 0.0000001d);
+        assertEquals(expected, calculator.getCurrentValue(), 0.0000001d);
     }
 
     @Test
-    public void divide_ByZero(){
-        assertEquals(Double.POSITIVE_INFINITY, calculator.divide(5, 0));
+    public void divide_ByZero() throws DivideByZeroException {
+        assertThrows(DivideByZeroException.class, () -> {calculator.divide(5, 0);});
     }
     
 
