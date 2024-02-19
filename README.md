@@ -11,3 +11,4 @@ Some of these individual steps can also be found separately in the following bra
 - [snadi/pitest](https://github.com/snadi/testdemo/tree/snadi/pitest): configures pitest. The README in that branch explains how to configure and run pitest with maven.
 - [snadi/basicci](https://github.com/snadi/testdemo/tree/snadi/basicci): adding a very basic github actions workflow file that gets triggered on every push to any branch.
 - [snadi/cievents](https://github.com/snadi/testdemo/tree/snadi/ci-events): changes github actions workflow to be triggered on every push to main and any Pull Request.
+- [snadi/javamatrix](https://github.com/snadi/testdemo/tree/snadi/javamatrix): shows how to configure a workflow to run on multiple java versions (using a matrix setup for the job). This is not currently integrated in main. See [PR](https://github.com/snadi/testdemo/pulls) for how several checks get triggered.
