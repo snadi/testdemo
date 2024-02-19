@@ -4,6 +4,7 @@ on:
     push:
       branches:
         - main
+        - snadi/javamatrix
 
 jobs:
   test:
