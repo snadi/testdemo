@@ -4,10 +4,15 @@ on:
     push:
       branches:
         - main
+        - snadi/javamatrix
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ '8', '11', '17', '21' ]
+    name: Java ${{ matrix.Java }} sample
 
     steps:
       - uses: actions/checkout@v4
@@ -15,8 +20,9 @@ jobs:
       - name: Set up JDK 8
         uses: actions/setup-java@v3
         with:
-          java-version: '8'
+          java-version: ${{ matrix.java }}
           distribution: 'zulu'
+
       - name: Run unit tests
         working-directory: .
         run: |
